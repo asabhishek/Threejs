@@ -10,10 +10,7 @@ var example = (function() {
         mesh;
 
     function initScene() {
-        // renderer.setSize(window.innerWidth, window.innerHeight);
-        // document.getElementById("webgl-container").appendChild(renderer.domElement);
-
-        // scene.add(light);
+   
 
         renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -22,15 +19,7 @@ var example = (function() {
 
         scene.add(light);
 
-        // camera = new THREE.PerspectiveCamera(
-        //     35,
-        //     window.innerWidth / window.innerHeight,
-        //     1,
-        //     1000
-        // );
-
-        // camera.position.z = 100;
-        // scene.add(camera);   
+      
 
         camera = new THREE.PerspectiveCamera(
         35,
@@ -42,30 +31,9 @@ var example = (function() {
         camera.position.z= 100;            
         scene.add( camera );       
 
-    //     box = new THREE.Mesh(
-    //         new THREE.BoxGeometry(
-    //             20,
-    //             20,
-    //             20),
-    //         new THREE.MeshBasicMaterial({
-
-    //             vertexColors: THREE.VertexColors
-    //         }));
-
-    //    // assignColorsToCube(box);
-    //     scene.add(box);
-
-    //  box = new THREE.Mesh(
-    //     new THREE.BoxGeometry(20,20,20),
-    //     new THREE.MeshBasicMaterial({color: 0xFF0000})
-    //     );
-
-    //     box.name="box";
-
-    //     scene.add(box);
-
+    
     var loader = new THREE.JSONLoader();
-    loader.load('./marmelab.json', function(geometry, materials) {
+    loader.load('./building.json', function(geometry, materials) {
         mesh = new THREE.Mesh(geometry, new THREE.MeshFaceMaterial(materials));
         mesh.scale.x = mesh.scale.y = mesh.scale.z = 0.75;
         mesh.translation = THREE.GeometryUtils.center(geometry);
